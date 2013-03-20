@@ -44,9 +44,8 @@
       <div class="row">
         <h3><span>{{ name }}</span></h3>
         <button class="ctrButton" {{ action inc }}>{{ count }}</button>
-        <p><input type=checkbox {{bindAttr checked="isAscending" }}
-        {{action toggleAscending}}>
-        ascending: {{ isAscending }}</p>
+        <p>ascending: <input type=checkbox {{bindAttr checked="isAscending" }}
+        {{action toggleAscending}}></p>
       </div>
     </script>
 
