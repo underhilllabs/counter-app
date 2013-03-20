@@ -4,6 +4,7 @@ window.App = Ember.Application.create();
 App.Router.map(function() {
   this.resource('counters', function() {
     this.resource('counter', { path: ':counter_id' });
+    this.route('new');
   });
 });
 
@@ -21,6 +22,10 @@ App.CountersRoute = Ember.Route.extend({
 
 App.CountersController = Ember.ArrayController.extend();
 
+App.CountersNewController = Ember.ObjectController.extend({
+  addCounter: function() {
+  }
+});
 App.CounterController = Ember.ObjectController.extend({
     inc: function() {
       var cur = this.get('count');

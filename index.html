@@ -18,23 +18,28 @@
   <body>
     
     <script type="text/x-handlebars" data-template-name="application">
-      <h1>Knitting Stash</h1>
-      <hr>
-      {{ outlet }}
+    <div class="row">
+      <div class="twelve columns">
+        <h1>Knitting Stash</h1>
+        <hr>
+        {{ outlet }}
+		  </div>
+	  </div>
     </script>
 
 
     <script type="text/x-handlebars" data-template-name="counters">
       <div class="row">
-        <div class="four columns">
+        <div class="three columns">
           <h2>Counters</h2>
-          <ul id="counterMenu">
+          <ul id="menu">
           {{#each counter in controller}}
             <li class="counter">{{#linkTo "counter" counter}}{{ counter.name }}{{/linkTo}}</li>
           {{/each}}
           </ul>
+					{{#linkTo counters.new}}create new counter{{/linkTo}}
         </div>
-        <div class="four columns">
+        <div class="nine columns">
           {{ outlet }}
         </div>
       </div>
@@ -49,6 +54,9 @@
       </div>
     </script>
 
+    <script type="text/x-handlebars" data-template-name="counters/new">
+			 Counter Name: {{view Ember.TextField valueBinding="newCounterName" action="addCounter"}}
+	  </script>
 
 
 
