@@ -38,24 +38,24 @@ App.Store = DS.Store.extend({
 App.Counter = DS.Model.extend({
   name: DS.attr('string'),
   count: DS.attr('number'),
-  //asc:  DS.attr('boolean')
+  isAscending:  DS.attr('boolean')
 });
 
 
 App.Counter.FIXTURES = [{
   id: 1,
   name: 'Green Sweater',
-  count: 0
-  //asc: true
+  count: 0,
+  isAscending: true
 }, {
   id: 2,
-  name: 'red hat',
-  count: 0
-  //asc: true
+  name: 'Red Hat',
+  count: 0,
+  isAscending: true
 }, {
   id: 3,
   name: 'Doctor Who Scarf',
-  count: 0
-  //asc: true
+  count: 0,
+  isAscending: true
 }];
 

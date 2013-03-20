@@ -28,9 +28,11 @@
       <div class="row">
         <div class="four columns">
           <h2>Counters</h2>
+          <ul id="counterMenu">
           {{#each counter in controller}}
-            {{#linkTo "counter" counter}}{{ counter.name }}{{/linkTo}}
+            <li class="counter">{{#linkTo "counter" counter}}{{ counter.name }}{{/linkTo}}</li>
           {{/each}}
+          </ul>
         </div>
         <div class="four columns">
           {{ outlet }}
@@ -40,8 +42,10 @@
 
     <script type="text/x-handlebars" data-template-name="counter">
       <div class="row">
-        <h2><span>{{ name }}</span></h2>
-        <button {{ action inc }}>{{ count }}</button>
+        <h3><span>{{ name }}</span></h3>
+        <button class="ctrButton" {{ action inc }}>{{ count }}</button>
+        <p><input type=checkbox {{bindAttr enabled="isAscending" }}>
+        ascending: {{ isAscending }}</p>
       </div>
     </script>
 
