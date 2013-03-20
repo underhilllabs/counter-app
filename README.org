@@ -1,0 +1,2 @@
+* Knitting Counter App
+** a simple project written with Ember.js
