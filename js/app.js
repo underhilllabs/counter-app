@@ -1,4 +1,3 @@
-
 window.App = Ember.Application.create();
 
 // Router
@@ -24,8 +23,15 @@ App.CountersController = Ember.ArrayController.extend();
 
 App.CounterController = Ember.ObjectController.extend({
     inc: function() {
-      cur = this.get('count');
-      this.set('count', cur + 1);
+      var cur = this.get('count');
+      var step = 1;
+      if (!this.get('isAscending')) {
+          step = step * (-1);
+      }
+      this.set('count', cur + step);
+    },
+    toggleAscending: function() {
+        this.set('isAscending', !this.get('isAscending'));
     }
 });
 
