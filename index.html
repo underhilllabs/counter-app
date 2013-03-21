@@ -55,8 +55,10 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="counters/new">
-			 Counter Name: {{view Ember.TextField valueBinding="newCounterName" action="addCounter"}}
-	  </script>
+			 Counter Name: {{view Ember.TextField
+			 value="" action="addCounter"}}
+             {{newCounterName}}
+	</script>
 
 
 

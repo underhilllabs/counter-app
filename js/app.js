@@ -8,6 +8,13 @@ App.Router.map(function() {
   });
 });
 
+App.CountersNewRoute = Ember.Route.extend({
+  setupController: function(controller, counter) {
+    controller.set('content', counter);
+  }
+});
+
+
 App.IndexRoute = Ember.Route.extend({
     redirect: function() {
       this.transitionTo('counters');
@@ -22,10 +29,15 @@ App.CountersRoute = Ember.Route.extend({
 
 App.CountersController = Ember.ArrayController.extend();
 
+
 App.CountersNewController = Ember.ObjectController.extend({
-  addCounter: function() {
+  addCounter: function(newCounterName) {
+      var ctr = App.Counter.createRecord({ count: 30, isAscending: true, name: newCounterName });
+      this.transitionTo('counters');
   }
 });
+
+
 App.CounterController = Ember.ObjectController.extend({
     inc: function() {
       var cur = this.get('count');
