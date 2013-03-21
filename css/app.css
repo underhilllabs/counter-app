@@ -21,8 +21,11 @@
 
 ul#menu li {
   list-style-type: none;
-  text-align: center;
+  text-align: left;
   padding-bottom: 1em;
+}
+ul#menu li a {
+  padding: .8em;
 }
 ul#menu li div {
   font-size: 64px;
