@@ -9,6 +9,7 @@ App.Router.map(function() {
 });
 
 App.CountersNewRoute = Ember.Route.extend({
+  // tell the Router what model to use for the controller
   setupController: function(controller, counter) {
     controller.set('content', counter);
   }

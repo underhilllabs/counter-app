@@ -33,11 +33,11 @@
         <div class="three columns">
           <h2>Counters</h2>
           <ul id="menu">
-          {{#each counter in controller}}
-            <li class="counter">{{#linkTo "counter" counter}}{{ counter.name }}{{/linkTo}}</li>
-          {{/each}}
+            {{#each counter in controller}}
+              <li class="counter">{{#linkTo "counter" counter}}{{ counter.name }}{{/linkTo}}</li>
+            {{/each}}
           </ul>
-					{{#linkTo counters.new}}create new counter{{/linkTo}}
+		  {{#linkTo counters.new}}create new counter{{/linkTo}}
         </div>
         <div class="nine columns">
           {{ outlet }}
@@ -50,14 +50,13 @@
         <h3><span>{{ name }}</span></h3>
         <button class="ctrButton" {{ action inc }}>{{ count }}</button>
         <p>ascending: <input type=checkbox {{bindAttr checked="isAscending" }}
-        {{action toggleAscending}}></p>
+                      {{action toggleAscending}}></p>
       </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="counters/new">
 			 Counter Name: {{view Ember.TextField
-			 value="" action="addCounter"}}
-             {{newCounterName}}
+			                 value="" action="addCounter"}}
 	</script>
 
 
