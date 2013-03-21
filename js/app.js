@@ -41,7 +41,6 @@ App.CountersNewController = Ember.ObjectController.extend({
 App.CounterController = Ember.ObjectController.extend({
     inc: function() {
       var cur = this.get('count');
-      var step = 1;
       if (!this.get('isAscending')) {
           step = step * (-1);
       }
@@ -61,6 +60,7 @@ App.Store = DS.Store.extend({
 App.Counter = DS.Model.extend({
   name: DS.attr('string'),
   count: DS.attr('number'),
+  step: 1,
   isAscending:  DS.attr('boolean')
 });
 
@@ -69,16 +69,19 @@ App.Counter.FIXTURES = [{
   id: 1,
   name: 'Green Sweater',
   count: 0,
+  step: 1,
   isAscending: true
 }, {
   id: 2,
   name: 'Red Hat',
   count: 0,
+  step: 1,
   isAscending: true
 }, {
   id: 3,
   name: 'Doctor Who Scarf',
   count: 0,
+  step: 1,
   isAscending: true
 }];
 
