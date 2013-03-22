@@ -40,6 +40,7 @@ App.CountersNewController = Ember.ObjectController.extend({
 
 App.CounterController = Ember.ObjectController.extend({
     inc: function() {
+      var step = this.get('step');
       var cur = this.get('count');
       if (!this.get('isAscending')) {
           step = step * (-1);
