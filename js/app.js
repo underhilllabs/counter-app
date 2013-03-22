@@ -62,7 +62,7 @@ App.Store = DS.Store.extend({
 App.Counter = DS.Model.extend({
   name: DS.attr('string'),
   count: DS.attr('number'),
-  step: 1,
+  step: DS.attr('number'),
   isAscending:  DS.attr('boolean')
 });
 
