@@ -42,12 +42,13 @@ App.CounterController = Ember.ObjectController.extend({
     inc: function() {
       var step = this.get('step');
       var cur = this.get('count');
-      if (!this.get('isAscending')) {
-          step = step * (-1);
-      }
+      //if (!this.get('isAscending')) {
+      //    step = step * (-1);
+      //}
       this.set('count', cur + step);
     },
     toggleAscending: function() {
+        this.set('step', (-1) * this.get('step'));
         this.set('isAscending', !this.get('isAscending'));
     }
 });
