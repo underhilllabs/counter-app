@@ -34,7 +34,7 @@ App.CountersController = Ember.ArrayController.extend();
 
 App.CountersNewController = Ember.ObjectController.extend({
   addCounter: function(newCounterName) {
-      var ctr = App.Counter.createRecord({ count: 30, isAscending: true, name: newCounterName });
+      var ctr = App.Counter.createRecord({ count: 30, step: 1, isAscending: true, name: newCounterName });
       this.transitionTo('counters');
   }
 });
@@ -44,9 +44,6 @@ App.CounterController = Ember.ObjectController.extend({
     inc: function() {
       var step = this.get('step');
       var cur = this.get('count');
-      //if (!this.get('isAscending')) {
-      //    step = step * (-1);
-      //}
       this.set('count', cur + step);
     },
     toggleAscending: function() {
