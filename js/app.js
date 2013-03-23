@@ -6,15 +6,15 @@ App.Router.map(function() {
     this.resource('counter', { path: ':counter_id' });
     this.route('new');
   });
-});
+})
 
+// Routes
 App.CountersNewRoute = Ember.Route.extend({
   // tell the Router what model to use for the controller
   setupController: function(controller, counter) {
     controller.set('content', counter);
   }
 });
-
 
 App.IndexRoute = Ember.Route.extend({
     redirect: function() {
@@ -28,6 +28,7 @@ App.CountersRoute = Ember.Route.extend({
     }
 });
 
+// Controllers
 App.CountersController = Ember.ArrayController.extend();
 
 
@@ -41,13 +42,15 @@ App.CountersNewController = Ember.ObjectController.extend({
 
 App.CounterController = Ember.ObjectController.extend({
     inc: function() {
+      var step = this.get('step');
       var cur = this.get('count');
-      if (!this.get('isAscending')) {
-          step = step * (-1);
-      }
+      //if (!this.get('isAscending')) {
+      //    step = step * (-1);
+      //}
       this.set('count', cur + step);
     },
     toggleAscending: function() {
+        this.set('step', (-1) * this.get('step'));
         this.set('isAscending', !this.get('isAscending'));
     }
 });
@@ -61,7 +64,7 @@ App.Store = DS.Store.extend({
 App.Counter = DS.Model.extend({
   name: DS.attr('string'),
   count: DS.attr('number'),
-  step: 1,
+  step: DS.attr('number'),
   isAscending:  DS.attr('boolean')
 });
 
