@@ -59,7 +59,7 @@ App.CounterController = Ember.ObjectController.extend({
 App.Store = DS.Store.extend({
   revision: 11,
   //adapter: 'DS.FixtureAdapter'
-  adapter: 'DS.LSAdapter'
+  adapter: 'App.LSAdapter'
 });
 
 App.LSAdapter = DS.LSAdapter.extend({
@@ -74,23 +74,23 @@ App.Counter = DS.Model.extend({
 });
 
 
-App.Counter.FIXTURES = [{
-  id: 1,
-  name: 'Green Sweater',
-  count: 0,
-  step: 1,
-  isAscending: true
-}, {
-  id: 2,
-  name: 'Red Hat',
-  count: 0,
-  step: 1,
-  isAscending: true
-}, {
-  id: 3,
-  name: 'Doctor Who Scarf',
-  count: 0,
-  step: 1,
-  isAscending: true
-}];
+// App.Counter.FIXTURES = [{
+//   id: 1,
+//   name: 'Green Sweater',
+//   count: 0,
+//   step: 1,
+//   isAscending: true
+// }, {
+//   id: 2,
+//   name: 'Red Hat',
+//   count: 0,
+//   step: 1,
+//   isAscending: true
+// }, {
+//   id: 3,
+//   name: 'Doctor Who Scarf',
+//   count: 0,
+//   step: 1,
+//   isAscending: true
+// }];
 
