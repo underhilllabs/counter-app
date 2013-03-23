@@ -34,7 +34,8 @@ App.CountersController = Ember.ArrayController.extend();
 
 App.CountersNewController = Ember.ObjectController.extend({
   addCounter: function(newCounterName) {
-      var ctr = App.Counter.createRecord({ count: 30, step: 1, isAscending: true, name: newCounterName });
+      var ctr = App.Counter.createRecord({ count: 0, step: 1, isAscending: true, name: newCounterName });
+      this.get('store').commit();
       this.transitionTo('counters');
   }
 });
@@ -45,17 +46,24 @@ App.CounterController = Ember.ObjectController.extend({
       var step = this.get('step');
       var cur = this.get('count');
       this.set('count', cur + step);
+      this.get('store').commit();
     },
     toggleAscending: function() {
         this.set('step', (-1) * this.get('step'));
         this.set('isAscending', !this.get('isAscending'));
+        this.get('store').commit();
     }
 });
 
 // Models
 App.Store = DS.Store.extend({
   revision: 11,
-  adapter: 'DS.FixtureAdapter'
+  //adapter: 'DS.FixtureAdapter'
+  adapter: 'DS.LSAdapter'
+});
+
+App.LSAdapter = DS.LSAdapter.extend({
+  namespace: 'counter-app'
 });
 
 App.Counter = DS.Model.extend({
