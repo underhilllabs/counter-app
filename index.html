@@ -31,7 +31,7 @@
     <script type="text/x-handlebars" data-template-name="counters">
       <div class="row">
         <div class="three columns">
-          <h2>Counters</h2>
+          <h3>Counters</h3>
           <ul id="menu">
             {{#each counter in controller}}
               <li class="counter">{{#linkTo "counter" counter}}{{ counter.name }}{{/linkTo}}</li>
@@ -47,7 +47,7 @@
 
     <script type="text/x-handlebars" data-template-name="counter">
       <div class="row">
-        <h3><span>{{ name }}</span></h3>
+        <h2><span>{{ name }}</span></h2>
         <button class="ctrButton" {{ action inc }}>{{ count }}</button>
         <p>ascending: <input type=checkbox {{bindAttr checked="isAscending" }}
                       {{action toggleAscending}}></p>

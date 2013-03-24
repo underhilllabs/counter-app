@@ -31,7 +31,6 @@ App.CountersRoute = Ember.Route.extend({
 // Controllers
 App.CountersController = Ember.ArrayController.extend();
 
-
 App.CountersNewController = Ember.ObjectController.extend({
   addCounter: function(newCounterName) {
       var ctr = App.Counter.createRecord({ count: 0, step: 1, isAscending: true, name: newCounterName });
