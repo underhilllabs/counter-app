@@ -39,7 +39,6 @@ App.CountersNewController = Ember.ObjectController.extend({
   }
 });
 
-
 App.CounterController = Ember.ObjectController.extend({
     inc: function() {
       var step = this.get('step');
@@ -57,7 +56,6 @@ App.CounterController = Ember.ObjectController.extend({
 // Models
 App.Store = DS.Store.extend({
   revision: 11,
-  //adapter: 'DS.FixtureAdapter'
   adapter: 'App.LSAdapter'
 });
 
@@ -71,25 +69,3 @@ App.Counter = DS.Model.extend({
   step: DS.attr('number'),
   isAscending:  DS.attr('boolean')
 });
-
-
-// App.Counter.FIXTURES = [{
-//   id: 1,
-//   name: 'Green Sweater',
-//   count: 0,
-//   step: 1,
-//   isAscending: true
-// }, {
-//   id: 2,
-//   name: 'Red Hat',
-//   count: 0,
-//   step: 1,
-//   isAscending: true
-// }, {
-//   id: 3,
-//   name: 'Doctor Who Scarf',
-//   count: 0,
-//   step: 1,
-//   isAscending: true
-// }];
-
