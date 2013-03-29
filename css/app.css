@@ -3,6 +3,9 @@
   width: 10em;
   font-size: 200%;
 }
+div.top-bar h1 {
+  color: #999999;
+}
 
 ul#menu li {
   list-style-type: none;
@@ -20,6 +23,7 @@ ul#menu li p {
   font-weight: bold;
   text-transform: uppercase;
 }
+
 
 h2 span {
   padding: 0.5em 1em;
